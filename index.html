@@ -229,6 +229,217 @@
       .team-item img { border-top-left-radius: 20px; border-top-right-radius: 20px; }
       /* General icon adjustments */
       [class*="icon-"] img { width: 40px; height: 40px; }
+      /* Carousel small and pretty */
+      .small-carousel {
+        max-width: 900px;
+        margin: 0 auto 2rem auto;
+        border-radius: 24px;
+        padding: 0 0 10px 0;
+        background: none !important;
+        box-shadow: none !important;
+      }
+      .small-carousel .carousel-inner {
+        border-radius: 24px;
+      }
+      .small-carousel .carousel-item img {
+        border-radius: 24px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        height: 170px;
+        object-fit: cover;
+        width: 100%;
+        min-height: 120px;
+        max-height: 220px;
+      }
+      .enhanced-caption {
+        background: linear-gradient(90deg, rgba(36,73,165,0.92) 0%, rgba(0,123,255,0.92) 100%);
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 8px 32px rgba(36,73,165,0.10);
+        color: #fff !important;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 18px 0 12px 0;
+        position: absolute;
+        width: 100%;
+      }
+      .carousel-title {
+        color: #fff !important;
+        font-weight: 700;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 8px rgba(36,73,165,0.18);
+      }
+      .carousel-desc {
+        color: #e3eefd !important;
+        font-size: 1.05rem;
+        font-weight: 400;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 1px 4px rgba(36,73,165,0.12);
+      }
+      .carousel-btn {
+        background: #fff !important;
+        color: #2449a5 !important;
+        border: none;
+        font-weight: 600;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-size: 1rem;
+        box-shadow: 0 4px 16px rgba(36,73,165,0.08);
+        transition: background 0.3s, color 0.3s;
+      }
+      .carousel-btn:hover {
+        background: #2449a5 !important;
+        color: #fff !important;
+      }
+      @media (min-width: 992px) {
+        .small-carousel {
+          max-width: 900px;
+        }
+        .small-carousel .carousel-item img {
+          height: 200px;
+          max-height: 220px;
+        }
+        .position-relative.overflow-hidden.rounded.ps-4.pt-4.h-100 {
+          max-width: 420px;
+        }
+      }
+      @media (max-width: 991px) {
+        .small-carousel {
+          max-width: 100% !important;
+        }
+        .small-carousel .carousel-item img {
+          height: 140px;
+          max-height: 160px;
+        }
+        .carousel-title { font-size: 1.2rem; }
+        .carousel-desc { font-size: 0.95rem; }
+        .position-relative.overflow-hidden.rounded.ps-4.pt-4.h-100 {
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 767px) {
+        .carousel-title { font-size: 1rem; }
+        .carousel-desc { font-size: 0.9rem; }
+        .enhanced-caption { padding: 10px 0 8px 0; }
+        .small-carousel .carousel-item img {
+          height: 110px;
+          max-height: 130px;
+        }
+        .col-lg-6 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .position-relative.overflow-hidden.rounded.ps-4.pt-4.h-100 {
+          max-width: 100%;
+        }
+      }
+
+      /* Testimonials in a single horizontal row, responsive */
+      .testimonial-row {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: nowrap;
+      }
+      .testimonial-row .testimonial {
+        flex: 1 1 0;
+        max-width: 340px;
+        min-width: 220px;
+        background: #fff;
+        padding: 30px 20px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      @media (max-width: 1100px) {
+        .testimonial-row {
+          gap: 16px;
+        }
+        .testimonial-row .testimonial {
+          max-width: 300px;
+          padding: 24px 10px;
+        }
+      }
+      @media (max-width: 991px) {
+        .testimonial-row {
+          flex-wrap: wrap;
+        }
+        .testimonial-row .testimonial {
+          flex: 1 1 100%;
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+      @media (max-width: 767px) {
+        .testimonial-row {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .testimonial-row .testimonial {
+          max-width: 100%;
+          min-width: 0;
+        }
+      }
+
+      /* Partner logos: exactly 2 rows, 6 columns (last row 5 logos centered) */
+      .logo-grid.partner-2rows {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 18px 10px;
+        justify-items: center;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .logo-grid.partner-2rows img {
+        width: 80px !important;
+        height: 80px !important;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(36,73,165,0.06);
+        padding: 8px;
+      }
+      .logo-grid.partner-2rows img:nth-child(n+12) { display: none; } /* Hide any extra logos */
+      .logo-grid.partner-2rows img:nth-child(11) {
+        grid-column: 2 / span 1;
+        grid-row: 2;
+      }
+      @media (max-width: 991px) {
+        .logo-grid.partner-2rows {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+          max-width: 100%;
+        }
+        .logo-grid.partner-2rows img {
+          width: 60px !important;
+          height: 60px !important;
+          padding: 4px;
+        }
+        .logo-grid.partner-2rows img:nth-child(11) {
+          grid-column: auto;
+          grid-row: auto;
+        }
+      }
+      @media (max-width: 600px) {
+        .logo-grid.partner-2rows {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(6, 1fr);
+          gap: 10px 4px;
+        }
+        .logo-grid.partner-2rows img {
+          width: 48px !important;
+          height: 48px !important;
+          padding: 2px;
+        }
+      }
     </style>
   </head>
 
@@ -305,65 +516,94 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScEbHpiUrKMUNbeU6V9N9vcaA6LsDMPadmg5LMl38w386bFtw/viewform?usp=sf_link" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a>
       </nav>
       <!-- Navbar End -->
-<!-- Carousel Start -->
-<div class="container-fluid p-0 mb-5" style="overflow: hidden;">
-  <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <!-- First Carousel Item -->
-      <div class="carousel-item active">
-        <img class="w-100" src="img/bgimage.png" alt="Image" style="object-fit: cover; height: 100vh; max-height: 500px;" />
-        <div class="carousel-caption" style="display: flex; align-items: center; justify-content: center; height: auto; background: rgba(0, 0, 0, 0.4); padding: 20px 0; position: absolute; bottom: 20px; left: 0; right: 0;">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-5">
-                <h1 class="mb-3 animated slideInDown" style="font-size: 2.5rem; color: #fff; font-weight: bold; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);">
-                  Insurance Creates Wealth
-                </h1>
-                <p class="mb-4" style="font-size: 1.1rem; color: #f8f9fa; line-height: 1.5; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
-                  Smart Choices for a Secure Future
-                </p>
-                <a href="" class="btn py-2 px-4" style="background-color: #007bff; color: #fff; font-weight: 600; border-radius: 30px; transition: background-color 0.3s ease; text-transform: uppercase; font-size: 0.9rem;">
-                  Learn More
-                </a>
-              </div>
+
+      <!-- Carousel & "Start Your Journey" Section Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5 align-items-center flex-lg-row flex-column-reverse">
+      <!-- Left: Start Your Journey -->
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <!-- Increased width from 420px to 480px -->
+        <div class="position-relative overflow-hidden rounded ps-4 pt-4 h-100" style="min-height: 220px; max-width: 480px; width: 100%;">
+          <div style="position: relative; width: 95%; height: 170px;">
+            <img 
+              src="img/icon-02-primary1.png"
+              alt="" 
+              style="position: absolute; width: 100%; height: 100%; object-fit: contain; object-position: center; margin-left: 35px;" 
+            />
+          </div>
+          <div class="position-absolute top-0 start-0 bg-white rounded pe-3 pb-3" style="width: 200px; height: 150px">
+            <div class="d-flex flex-column justify-content-center text-center bg-primary rounded h-100 p-4">
+              <h2 class="text-white mb-0">Start</h2>
+              <h3 class="text-white">Your</h3>
+              <h3 class="text-white mb-0">Journey</h3>
+              <h5 class="text-white mb-0">With</h5>
             </div>
           </div>
         </div>
       </div>
-      <!-- Second Carousel Item -->
-      <div class="carousel-item">
-        <img class="w-100" src="img/bgcar2.png" alt="Image" style="object-fit: cover; height: 100vh; max-height: 500px;" />
-        <div class="carousel-caption" style="display: flex; align-items: center; justify-content: center; height: auto; background: rgba(0, 0, 0, 0.4); padding: 20px 0; position: absolute; bottom: 20px; left: 0; right: 0;">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-5">
-                <h3 class="mb-3 animated slideInDown" style="font-size: 2rem; color: #fff; font-weight: bold; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);">
-                  Best Insurance Starts Here
-                </h3>
-                <p class="mb-4" style="font-size: 1.1rem; color: #f8f9fa; line-height: 1.5; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
-                  Simple Plans for Your Needs
-                </p>
-                <a href="service.html" class="btn py-2 px-4" style="background-color: #007bff; color: #fff; font-weight: 600; border-radius: 30px; transition: background-color 0.3s ease; text-transform: uppercase; font-size: 0.9rem;">
-                  Learn More
-                </a>
+      <!-- Right: Carousel -->
+      <div class="col-lg-6 wow fadeInUp d-flex justify-content-lg-end justify-content-center" data-wow-delay="0.3s">
+        <div id="header-carousel" class="carousel slide small-carousel w-100" data-bs-ride="carousel" style="background:none; box-shadow:none; max-width: 900px;">
+          <div class="carousel-inner">
+            <!-- First Carousel Item -->
+            <div class="carousel-item active">
+              <img class="w-100" src="img/bgimage.png" alt="Image" />
+              <div class="carousel-caption enhanced-caption">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-12">
+                      <h1 class="mb-3 animated slideInDown carousel-title">
+                        Insurance Creates Wealth
+                      </h1>
+                      <p class="mb-4 carousel-desc">
+                        Smart Choices for a Secure Future
+                      </p>
+                      <a href="service.html" class="btn py-2 px-4 carousel-btn">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Carousel Item -->
+            <div class="carousel-item">
+              <img class="w-100" src="img/bgcar2.png" alt="Image" />
+              <div class="carousel-caption enhanced-caption">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-12">
+                      <h3 class="mb-3 animated slideInDown carousel-title">
+                        Best Insurance Starts Here
+                      </h3>
+                      <p class="mb-4 carousel-desc">
+                        Simple Plans for Your Needs
+                      </p>
+                      <a href="service.html" class="btn py-2 px-4 carousel-btn">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev" style="width: 5%; background: none; border-radius: 50%; box-shadow: none;">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: none;"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next" style="width: 5%; background: none; border-radius: 50%; box-shadow: none;">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: none;"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev" style="width: 5%; background: rgba(0, 0, 0, 0.2);">
-      <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next" style="width: 5%; background: rgba(0, 0, 0, 0.2);">
-      <span class="carousel-control-next-icon" aria-hidden="true" style="filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 </div>
-<!-- Carousel End -->
+<!-- Carousel & "Start Your Journey" Section End -->
 
       <!-- About Start -->
       <div class="container-xxl py-5">
@@ -373,17 +613,16 @@
               <div class="position-relative overflow-hidden rounded ps-5 pt-5 h-100" style="min-height: 400px">
 <div style="position: relative; width: 100%; height: 300px;">
   <img 
-    src="img\icon-02-primary1.png"
+    src="img\indianplane.jpg"
     alt="" 
     style="position: absolute; width: 100%; height: 100%; object-fit: contain; object-position: center; background: #fff;" 
   />
 </div>
-                <div class="position-absolute top-0 start-0 bg-white rounded pe-3 pb-3" style="width: 200px; height: 200px">
+                <div class="position-absolute top-0 start-0 bg-white rounded pe-3 pb-3" style="width: 150px; height: 150px">
                   <div class="d-flex flex-column justify-content-center text-center bg-primary rounded h-100 p-3">
-                    <h2 class="text-white mb-0">Start</h2>
-                    <h3 class="text-white">Your</h3>
-                    <h2 class="text-white mb-0">Journey</h2>
-                    <h5 class="text-white mb-0">With</h5>
+                    <h2 class="text-white mb-0">Why</h2>
+                    <h3 class="text-white">NSURE?</h3>
+                    
                   
                   </div>
                 </div>
@@ -492,7 +731,7 @@
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
               <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px">
-                <img class="position-absolute w-100 h-100" src="img/feature.jpg" alt="" style="object-fit: cover" />
+                <img class="position-absolute w-100 h-100" src="img/indianfamily.jpg" alt="" style="object-fit: cover" />
               </div>
             </div>
           </div>
@@ -596,113 +835,135 @@
       </div>
       <!-- Service End -->
 
-      <!-- Team Start -->
-      <div class="container-xxl py-5">
-        <div class="container">
-          <div class="text-center mx-auto" style="max-width: 500px">
-            <h1 class="display-6 mb-5">Meet Our Professional Team Members</h1>
-          </div>
-          <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="team-item rounded">
-                <img class="img-fluid" src="img/NarehSingh.png" alt="Nareh Singh" />
-                <div class="text-center p-4">
-                  <h5>Nareh Singh</h5>
-                  <span>CEO</span>
-                </div>
-                <div class="team-text text-center bg-white p-4">
-                  <h5>Nareh Singh</h5>
-                  <p>CEO & Founder</p>
-                  <div class="d-flex justify-content-center">
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="team-item rounded">
-                <img class="img-fluid" src="img/SubashNeupan.png" alt="Subash Neupan" />
-                <div class="text-center p-4">
-                  <h5>Subash Neupan</h5>
-                  <span>CTO</span>
-                </div>
-                <div class="team-text text-center bg-white p-4">
-                  <h5>Subash Neupan</h5>
-                  <p>Chief Technology Officer</p>
-                  <div class="d-flex justify-content-center">
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="team-item rounded">
-                <img class="img-fluid" src="img/team-.jpg" alt="Team Member" />
-                <div class="text-center p-4">
-                  <h5>John Doe</h5>
-                  <span>Senior Advisor</span>
-                </div>
-                <div class="team-text text-center bg-white p-4">
-                  <h5>John Doe</h5>
-                  <p>Senior Insurance Advisor</p>
-                  <div class="d-flex justify-content-center">
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-              <div class="team-item rounded">
-                <img class="img-fluid" src="img/team-.jpg" alt="Team Member" />
-                <div class="text-center p-4">
-                  <h5>Jane Smith</h5>
-                  <span>Claims Specialist</span>
-                </div>
-                <div class="team-text text-center bg-white p-4">
-                  <h5>Jane Smith</h5>
-                  <p>Claims and Support Specialist</p>
-                  <div class="d-flex justify-content-center">
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Testimonials (Horizontal Row, 3 Only) -->
+<section class="container-xxl py-5" id="testimonials">
+  <div class="text-center mb-5">
+    <h2 class="display-6">What Our Clients Say</h2>
+    <p class="text-muted">Real stories from policyholders who trust NSURE</p>
+  </div>
+  <div class="testimonial-row">
+    <div class="testimonial">
+      <img src="img/client1.jpg" alt="Nikunj Panthi">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
       </div>
-      <!-- Team End -->
+      <div class="name">Nikunj Panthi</div>
+      <div class="role">SME Owner</div>
+      <p>NSURE made getting insured simple and fast. The team explained everything clearly.</p>
+    </div>
+    <div class="testimonial">
+      <img src="img/client2.jpg" alt="Sushil Sharma">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="name">Sushil Sharma</div>
+      <div class="role">Homeowner</div>
+      <p>Great coverage options and responsive support. I feel confident and protected.</p>
+    </div>
+    <div class="testimonial">
+      <img src="img/client3.jpg" alt="Yogesh Dubey">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="name">Yogesh Dubey</div>
+      <div class="role">Consultant</div>
+      <p>Professional, friendly, and efficient. NSURE handled my claim without hassle.</p>
+    </div>
+  </div>
+</section>
 
-      <!-- Partner Companies -->
-      <div class="partner-companies-container">
-        <div class="header">Our Insurance Partners</div>
-        <div class="logo-grid">
-          <img src="img/tata.png" alt="TATA AIA Life Insurance">
-          <img src="img/hdfc.png" alt="HDFC Life Insurance">
-          <img src="img/icici.png" alt="ICICI Prudential Life Insurance">
-          <img src="img/max.png" alt="Max Life Insurance">
-          <img src="img/lic.png" alt="LIC">
-          <img src="img/sbi.png" alt="SBI Life Insurance">
-        </div>
-        <div class="logo-grid">
-          <img src="img/tataaig.png" alt="TATA AIG">
-          <img src="img/icicig.png" alt="ICICI Lombard General Insurance">
-          <img src="img/hdfcergo.png" alt="HDFC ERGO General Insurance">
-          <img src="img/oriental.png" alt="Oriental General Insurance">
-          <img src="img/liberty.png" alt="Liberty General Insurance">
+<!-- Team Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto" style="max-width: 500px">
+      <h1 class="display-6 mb-5">Meet Our Professional Team Members</h1>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="team-item rounded">
+          <img class="img-fluid" src="img/NarehSingh.png" alt="Nareh Singh" />
+          <div class="text-center p-4">
+            <h5>Nareh Singh</h5>
+            <span>CEO</span>
+          </div>
+          <div class="team-text text-center bg-white p-4">
+            <h5>Nareh Singh</h5>
+            <p>CEO & Founder</p>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="team-item rounded">
+          <img class="img-fluid" src="img/SubashNeupan.png" alt="Subash Neupan" />
+          <div class="text-center p-4">
+            <h5>Subash Neupane</h5>
+            <span>ISP</span>
+          </div>
+          <div class="team-text text-center bg-white p-4">
+            <h5>Subash Neupane</h5>
+            <p>ISP</p>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="team-item rounded">
+          <img class="img-fluid" src="img/team-.jpg" alt="Team Member" />
+          <div class="text-center p-4">
+            <h5>Pooja N. Khatri</h5>
+            <span>HR</span>
+          </div>
+          <div class="team-text text-center bg-white p-4">
+            <h5>Pooja N. Khatri</h5>
+            <p>HR</p>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+              <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Team End -->
+
+<!-- Partner Companies (Exactly 2 Rows) -->
+<div class="partner-companies-container">
+  <div class="header">Our Insurance Partners</div>
+  <div class="logo-grid partner-2rows">
+    <img src="img/tata.png" alt="TATA AIA Life Insurance">
+    <img src="img/hdfc.png" alt="HDFC Life Insurance">
+    <img src="img/icici.png" alt="ICICI Prudential Life Insurance">
+    <img src="img/max.png" alt="Max Life Insurance">
+    <img src="img/lic.png" alt="LIC">
+    <img src="img/sbi.png" alt="SBI Life Insurance">
+    <img src="img/tataaig.png" alt="TATA AIG">
+    <img src="img/icicig.png" alt="ICICI Lombard General Insurance">
+    <img src="img/hdfcergo.png" alt="HDFC ERGO General Insurance">
+    <img src="img/oriental.png" alt="Oriental General Insurance">
+    <img src="img/liberty.png" alt="Liberty General Insurance">
+  </div>
+</div>
 
       <!-- FAQs -->
       <section id="faq" class="faq-section">
@@ -939,7 +1200,7 @@
                 <h4 class="faq-question">What is property insurance?</h4>
                 <p class="faq-answer">Property insurance covers the risks of damage to property due to theft, fire, natural disasters, or other incidents.</p>
               </div>
-              <div class="faq-item">
+              <div class="faq-item"></div>
                 <h4 class="faq-question">Is property insurance mandatory?</h4>
                 <p class="faq-answer">While not mandatory for personal property, certain mortgages or leases may require property insurance.</p>
               </div>
@@ -974,163 +1235,149 @@
         </div>
       </section>
 
-      <!-- Testimonials -->
-      <section class="container-xxl py-5" id="testimonials">
-        <div class="text-center mb-5">
-          <h2 class="display-6">What Our Clients Say</h2>
-          <p class="text-muted">Real stories from policyholders who trust NSURE</p>
-        </div>
-        <div class="owl-carousel testimonial-carousel">
-          <div class="testimonial">
-            <img src="img/client1.jpg" alt="Client 1">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <div class="name">Ravi Kumar</div>
-            <div class="role">SME Owner</div>
-            <p>NSURE made getting insured simple and fast. The team explained everything clearly.</p>
-          </div>
-          <div class="testimonial">
-            <img src="img/client2.jpg" alt="Client 2">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="name">Priya Sharma</div>
-            <div class="role">Homeowner</div>
-            <p>Great coverage options and responsive support. I feel confident and protected.</p>
-          </div>
-          <div class="testimonial">
-            <img src="img/client3.jpg" alt="Client 3">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="name">Arun Mehta</div>
-            <div class="role">Consultant</div>
-            <p>Professional, friendly, and efficient. NSURE handled my claim without hassle.</p>
-          </div>
-        </div>
-      </section>
+      <!-- ...existing code above... -->
 
-      <!-- Footer Start -->
-      <div class="container-fluid bg-dark footer mt-5 pt-3 pb-3 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-              <h1 class="text-white m-0">
-                <img class="img-fluid" src="img/icon-02-primary1.png" alt="Nsure Insurance Logo" style="width: 100px;" />
-              </h1>
-            </div>
-            <div class="col-md-4 text-center mb-3 mb-md-0">
-              <div class="d-flex justify-content-center">
-                <a class="btn btn-square me-2" href=""><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square me-2" href=""><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4 text-center text-md-end">
-              <p class="mb-0">Registration Number: 36AAXFN2291B1Z2</p>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-12 text-center">
-              <p class="mb-0">&copy; <a href="#">Nsure Insurance</a>, All Rights Reserved. Designed By <a href="#">Nsure Creative Team</a></p>
-            </div>
-          </div>
+<!-- Footer Start -->
+<footer class="footer mt-5" style="background: linear-gradient(90deg, #2449a5 0%, #007bff 100%); color: #fff; border-top-left-radius: 32px; border-top-right-radius: 32px; box-shadow: 0 -4px 24px rgba(36,73,165,0.10);">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h1>
+          <img src="img/icon-02-primary.jpg" alt="NSURE Logo" style="width: 48px; vertical-align: middle;" />
+          <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">NSURE Insurance</span>
+        </h1>
+        <p class="mt-3 mb-2" style="color:#e3eefd;">Reliable insurance solutions for your family, business, and future. Secure your tomorrow with NSURE today.</p>
+        <div class="d-flex justify-content-center justify-content-md-start mt-3">
+          <a class="btn btn-square btn-light m-1" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-square btn-light m-1" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-square btn-light m-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-square btn-light m-1" href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <!-- Footer End -->
-
-      <!-- Back to Top -->
-      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3" style="color:#fff;">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" style="color:#e3eefd;">Home</a></li>
+          <li><a href="about.html" style="color:#e3eefd;">About Us</a></li>
+          <li><a href="service.html" style="color:#e3eefd;">Our Services</a></li>
+          <li><a href="contact.html" style="color:#e3eefd;">Contact Us</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScEbHpiUrKMUNbeU6V9N9vcaA6LsDMPadmg5LMl38w386bFtw/viewform?usp=sf_link" target="_blank" style="color:#e3eefd;">Get A Quote</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-3" style="color:#fff;">Contact Info</h5>
+        <p><i class="fa fa-phone-alt me-2"></i> +91 7997180616</p>
+        <p><i class="far fa-envelope-open me-2"></i> policy@nsureinsurance.com</p>
+        <p><i class="far fa-clock me-2"></i> Mon - Sat : 09:30 AM - 08:30 PM</p>
+        <div class="registration-info mt-3" style="color:#e3eefd;">
+          <span>IRDAI Reg. No. 123456 | GSTIN: 12ABCDE3456F7Z8</span>
+        </div>
+      </div>
     </div>
+    <hr style="border-color: #3a4a6a;">
+    <div class="text-center pt-2" style="color:#e3eefd;">
+      &copy; 2025 NSURE Insurance. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
+<style>
+/* Footer blue/white theme enhancements (copied from index.html) */
+.footer {
+  background: linear-gradient(90deg, #2449a5 0%, #007bff 100%) !important;
+  color: #fff;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  box-shadow: 0 -4px 24px rgba(36,73,165,0.10);
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+.footer h1,
+.footer .text-white {
+  color: #fff !important;
+}
+.footer a,
+.footer p,
+.footer .registration-info {
+  color: #e3eefd !important;
+  font-size: 0.95rem;
+}
+.footer a:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+}
+.footer .btn-square {
+  background: #fff !important;
+  color: #2449a5 !important;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(36,73,165,0.08);
+}
+.footer .btn-square:hover {
+  background: #ffc107 !important;
+  color: #2449a5 !important;
+}
+.footer .container {
+  padding: 0 15px;
+}
+.footer .row {
+  align-items: center;
+}
+.footer .registration-info {
+  font-size: 0.85rem;
+  color: #e3eefd;
+  margin-top: 10px;
+}
+.footer .col-md-4 {
+  margin-bottom: 12px;
+}
+@media (max-width: 767px) {
+  .footer {
+    border-radius: 0;
+    padding-top: 24px;
+    padding-bottom: 8px;
+  }
+  .footer .col-md-4 {
+    margin-bottom: 8px;
+  }
+}
+</style>
+<!-- ...existing code below... -->
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
-    <!-- Custom Scripts -->
-    <script>
-      window.addEventListener('load', function() {
-        document.getElementById('loading-screen').style.opacity = '0';
-        setTimeout(() => {
-          document.getElementById('loading-screen').style.display = 'none';
-          document.getElementById('main-content').style.opacity = '1';
-        }, 500);
-      });
-
-      // Read more toggle
-      document.querySelectorAll('.read-more-toggle').forEach(function(btn) {
-        var content = btn.previousElementSibling;
-        if (content && content.classList.contains('read-more-content')) {
-          btn.addEventListener('click', function() {
-            if (content.classList.contains('expanded')) {
-              content.classList.remove('expanded');
-              btn.textContent = 'Read More';
-            } else {
-              content.classList.add('expanded');
-              btn.textContent = 'See Less';
-            }
-          });
-        }
-      });
-
-      // FAQ Scripts
-      function showFaqSection(section) {
-        var allSections = document.querySelectorAll('.faq-items');
-        allSections.forEach(function (el) {
-          el.classList.remove('active');
-        });
-        document.getElementById(section).classList.add('active');
-      }
-
-      function showAll(section) {
-        var questions = document.querySelectorAll('#' + section + ' .more-questions');
-        questions.forEach(function (el) {
-          el.style.display = 'block';
-        });
-        document.querySelector('#' + section + ' .read-more').style.display = 'none';
-      }
-
-      document.querySelectorAll('.faq-question').forEach(function(question) {
-        question.addEventListener('click', function() {
-          var item = this.parentElement;
-          item.classList.toggle('active');
-        });
-      });
-
-      // Testimonials carousel
-      if (jQuery) {
-        jQuery(function($) {
-          if ($('.testimonial-carousel').length && $.fn.owlCarousel) {
-            $('.testimonial-carousel').owlCarousel({
-              autoplay: true,
-              smartSpeed: 600,
-              items: 3,
-              loop: true,
-              margin: 30,
-              dots: true,
-              nav: true,
-              navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
-              responsive: { 0: { items: 1 }, 768: { items: 2 }, 992: { items: 3 } }
-            });
-          }
-        });
-      }
-    </script>
-  </body>
+<!-- JS and closing tags -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script>
+  // Loading screen fade out
+  window.addEventListener('load', function() {
+    document.getElementById('loading-screen').style.opacity = 0;
+    setTimeout(function() {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.getElementById('main-content').style.opacity = 1;
+    }, 500);
+  });
+  // FAQ toggle logic (if not already present)
+  function showFaqSection(section) {
+    document.querySelectorAll('.faq-items').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.getElementById(section).classList.add('active');
+  }
+  function showAll(section) {
+    document.querySelectorAll('#' + section + ' .more-questions').forEach(function(el) {
+      el.style.display = 'block';
+    });
+    document.querySelector('#' + section + ' .read-more').style.display = 'none';
+  }
+</script>
+</body>
 </html>
